@@ -1,4 +1,4 @@
-package oplog
+package tlog
 
 import (
 	"fmt"
@@ -9,12 +9,12 @@ import (
 
 func Group[T any](root string, group *T) T {
 	if group == nil {
-		panic("oplog: nil group")
+		panic("tlog: nil group")
 	}
 
 	v := reflect.ValueOf(group).Elem()
 	if v.Kind() != reflect.Struct {
-		panic("oplog: group must point to a struct")
+		panic("tlog: group must point to a struct")
 	}
 
 	fillGroup(v, Op(root))
@@ -51,7 +51,7 @@ func fillGroup(v reflect.Value, prefix Op) {
 			continue
 		}
 
-		name := field.Tag.Get("oplog")
+		name := field.Tag.Get("tlog")
 		if name == "" {
 			name = kebabCase(field.Name)
 		}
@@ -66,7 +66,7 @@ func fillGroup(v reflect.Value, prefix Op) {
 			}
 
 			panic(fmt.Sprintf(
-				`oplog: field %q has unsupported type %s; expected oplog.Op or nested struct`,
+				`tlog: field %q has unsupported type %s; expected tlog.Op or nested struct`,
 				field.Name,
 				field.Type,
 			))

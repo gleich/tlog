@@ -1,4 +1,4 @@
-package oplog
+package tlog
 
 type Op string
 

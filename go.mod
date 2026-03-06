@@ -1,3 +1,3 @@
-module go.mattglei.ch/oplog
+module go.mattglei.ch/tlog
 
 go 1.26.0

@@ -1,12 +1,12 @@
 package main
 
-import "go.mattglei.ch/oplog"
+import "go.mattglei.ch/tlog"
 
-var Cache = oplog.Group("cache", &struct {
-	MarshalResponse oplog.Op
+var Cache = tlog.Group("cache", &struct {
+	MarshalResponse tlog.Op
 	Marshal         struct {
-		JSON oplog.Op
-		CSV  oplog.Op
+		JSON tlog.Op
+		CSV  tlog.Op
 	}
 }{})
 

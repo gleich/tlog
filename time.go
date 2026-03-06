@@ -1,4 +1,4 @@
-package oplog
+package tlog
 
 import (
 	"fmt"

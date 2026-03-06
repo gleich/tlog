@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go.mattglei.ch/oplog"
+	"go.mattglei.ch/tlog"
 )
 
 func main() {
-	oplog.Info("hello world!", "remove-code")
+	tlog.Info("hello world!", "remove-code")
 }
