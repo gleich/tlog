@@ -8,18 +8,18 @@ func logSince(fn func(string, ...any), opt Operation, msg string, start time.Tim
 	log(fn, opt, msg, append([]any{"duration", formatDuration(time.Since(start))}, v...)...)
 }
 
-func (opt Operation) InfoSince(msg string, start time.Time, v ...any) {
-	logSince(logger.Info, opt, msg, start, v...)
+func (o Operation) InfoSince(msg string, start time.Time, v ...any) {
+	logSince(logger.Info, o, msg, start, v...)
 }
 
-func (opt Operation) DebugSince(msg string, start time.Time, v ...any) {
-	logSince(logger.Debug, opt, msg, start, v...)
+func (o Operation) DebugSince(msg string, start time.Time, v ...any) {
+	logSince(logger.Debug, o, msg, start, v...)
 }
 
-func (opt Operation) WarnSince(msg string, start time.Time, v ...any) {
-	logSince(logger.Warn, opt, msg, start, v...)
+func (o Operation) WarnSince(msg string, start time.Time, v ...any) {
+	logSince(logger.Warn, o, msg, start, v...)
 }
 
-func (opt Operation) ErrorSince(msg string, start time.Time, v ...any) {
-	logSince(logger.Error, opt, msg, start, v...)
+func (o Operation) ErrorSince(msg string, start time.Time, v ...any) {
+	logSince(logger.Error, o, msg, start, v...)
 }
